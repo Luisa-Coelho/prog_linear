@@ -61,3 +61,5 @@ def definirmodelo():
     i+=1
     print(f"x{n_var-(n_var - i)} >= 0")
 
+#### COPIAR MATRIZ PARA INSERIR NO OUTRO LÁ DO SIMPLEX - GERAR 1° TABULEIRO
+### print(f'[[]]')

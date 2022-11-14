@@ -7,28 +7,40 @@
 ### tabuleiro ficticio com 4 colunas e 2 linhas i.e. 2 variáveis e 1 restrição
 #matriz1 = [[fo_x1, fo_x2, fo_xf1, bfo], [rest_x1, rest_x2, rest_xf1, b_rest]]
 
-global fo_x1
-global fo_x2
-global fo_x3
-global bfo
-global solution
+#global fo_x1
+#global fo_x2
+#global fo_x3
+#global bfo
+#global solution
 solution = 1
+global resultado 
 
-def check(matriz, n_col):
-  if n_col == 6:
-    fo_x1 = matriz[0][1]
-    fo_x2 = matriz[0][2]
-    bfo = matriz[0][3]
-  if n_col == 8:
-    fo_x1 = matriz[0][1]
-    fo_x2 = matriz[0][2]
-    fo_x3 = matriz[0][3]
-    bfo = matriz[0][7]
-  return fo_x1, fo_x2, fo_x3, bfo
+def check_max(linha, n_col):
+  #if n_col == 6:
+  #  fo_x1 = matriz[0][1]
+  #  fo_x2 = matriz[0][2]
+  #  bfo = matriz[0][3]
+  #if n_col == 8:
+  #  fo_x1 = matriz[0][1]
+  #  fo_x2 = matriz[0][2]
+  #  fo_x3 = matriz[0][3]
+  #  bfo = matriz[0][7]
+  #return fo_x1, fo_x2, fo_x3, bfo
+  c = 0
+  for i in linha:
+    c+=1
+    if i < 0:
+      break
+    if c == n_col and i >= 0:
+      return True
+
+  
 
 def simplex(matriz):
-  fo_x1, fo_x2, fo_x3, bfo = (-1, -1, -1, -1) 
-  while fo_x1 < 0 or fo_x2 < 0 or fo_x3 < 0 or bfo < 0:
+  #fo_x1, fo_x2, fo_x3, bfo = (-1, -1, -1, -1) 
+  # while fo_x1 < 0 or fo_x2 < 0 or fo_x3 < 0 or bfo < 0:
+  resultado = False
+  while resultado != True:
     matriz_t = transpose(matriz)
     n_linhas = len(matriz)
     n_colunas = len(matriz_t)
@@ -38,7 +50,8 @@ def simplex(matriz):
     matriz_t = transpose(matriz)
     vetor = matriz_t[colunaPivo]
     matriz = tabuleiros(matriz, colunaPivo, linhaPivo, elementoPivo, vetor, n_linhas, n_colunas)
-    fo_x1, fo_x2, fo_x3, bfo = check(matriz, n_colunas) 
+    z = matriz[0]
+    resultado = check_max(z, n_colunas) 
 
   return matriz
 
