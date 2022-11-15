@@ -2,20 +2,45 @@ import simplex as sp
 import grafico as gr
 import definir_modelo as dm
 import tkinter as tk
+from PIL import Image, ImageTk
+
+#https://www.youtube.com/watch?v=itRLRfuL_PQ - moça
+#https://www.youtube.com/watch?v=VMP1oQOxfM0 - indiano
 
 master = tk.Tk()
 master.title("Programação Linear - Passo a passo")
-canvas = tk.Canvas(master, width=600, height=300)
-canvas.grid(rowspan=4)
+canvas = tk.Canvas(master, width=600,height=300)
+canvas.grid(columnspan=3, rowspan=3)
 
-logo = tk.Image
-logo = tk.PhotoImage()
+logo = Image.open('sign.png')
+logo = ImageTk.PhotoImage(logo)
 logo_label = tk.Label(image=logo)
 logo_label.image = logo
-logo_label.grid(column=1, row=0)
+#logo_label.grid(column=1, row=0)
 
+#instructions
+instructions = tk.Label(master, text = 'Selcione o que você deseja fazer', font='Raleway')
+instructions.grid(columnspan=3, column=0, row=1)
+
+#browse_text = tk.StringVar()
+#browse_text.set('É ISSO QUE VOÇÊ QUER???')
 def exec_simplex():
-    input("Insira seu nome....")
+    name = input("Insira seu nome....")
+    print(f"Bem-vindx, {name}")
+    problema = input("Insira seu problema de programação linear")
+    print(problema)
+    solution = list(problema)
+    print(solution[0])
+
+browse_btn = tk.Button(master, text='browse_text', command= lambda:exec_simplex(), font = 'Raleway', bg="#15bebe", fg='white', height=2, width=15)
+browse_btn.grid(column=1, row=2)
+
+canvas = tk.Canvas(master, width=600,height=250)
+canvas.grid(columnspan=3)
+
+
+
+    
 
 def exec_grafico():
     pass
@@ -23,16 +48,4 @@ def exec_grafico():
 def exec_modelo():
     pass
 
-
 master.mainloop()
-
-#bt.grid(column=1, row=0)
-
-#prob1= [[1,-20,-30,-10,0,0,0,0], [0,1,1,1,1,0,0,400], [0,2,1,-1,0,1,0,200], [0,3,2,-1,0,0,1,300]]
-#prob2 = [[-4,-3,0,0,0,0],[1,3,1,0,0,7],[2,2,0,1,0,8],[1,1,0,0,1,3]]
-#sapateiro = [[1, -5, 2, 0, 0, 0], [0, 2, 1, 1, 0, 6], [0, 10, 12, 0, 1, 60]]
-#resultado = sp.simplex(prob2)
-#resultado
-#print(f"O resultado de lucro máximo é de: R${resultado[0][5]}")
-
-#dm.definirmodelo()
