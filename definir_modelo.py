@@ -48,7 +48,7 @@ def definirmodelo():
   i = 0
   for i in range(n_var):
     i+=1
-    print(f"x{n_var-(n_var - i)}")
+    print(f"\n x{n_var-(n_var - i)}")
 
 
   print("Restrições")
@@ -59,7 +59,7 @@ def definirmodelo():
   i = 0
   for i in range(0, n_var):
     i+=1
-    print(f"x{n_var-(n_var - i)} >= 0")
+    print(f"\n x{n_var-(n_var - i)} >= 0")
 
 #### COPIAR MATRIZ PARA INSERIR NO OUTRO LÁ DO SIMPLEX - GERAR 1° TABULEIRO
 ### print(f'[[]]')

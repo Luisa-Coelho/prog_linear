@@ -7,16 +7,14 @@ import numpy
 from numpy import arange
 from sympy import symbols, Eq, solve
 from sympy.abc import x, a
+
 from sympy.parsing.sympy_parser import (
     parse_expr, standard_transformations,
     implicit_multiplication_application
 )
 
-print sympy.solve(32*x-40,"x")
-print sympy.solve(2*x+23-7*x,"x")
-
-
-
+print(solve(32*x-40,"x"))
+print(solve(2*x+23-7*x,"x"))
 
 
 def my_parse(s, transfm=None):
@@ -24,7 +22,7 @@ def my_parse(s, transfm=None):
     if transfm is None:
         transfm = (standard_transformations +
             (implicit_multiplication_application,))
-    return sympy.Eq(
+    return Eq(
         parse_expr(lhs, transformations=transfm),
         parse_expr(rhs, transformations=transfm))
 
@@ -46,10 +44,12 @@ data_dict['x5'] = 0
 data_dict['x6'] = 0
 data_dict['x7'] = 0
 
+lista_nova = []
 for i in data_dict: 
     for j in range(n_rest):
         data_dict[i][j] = 0
-        result = simpy.solve(expr)
+        
+        result = solve(expr)
         lista_nova.append(result)
 
 
