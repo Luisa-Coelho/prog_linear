@@ -1,9 +1,9 @@
 import simplex as sp
 
 global auxiliares
-auxiliares = int(input("Insira a quantidade de auxiliares."))
+#auxiliares = int(input("Insira a quantidade de auxiliares."))
 
-def simplex(matriz):
+def simplex(matriz, auxiliares):
 
   resultado = False
   while resultado != True:
@@ -26,11 +26,11 @@ def simplex(matriz):
   #for i in range(n_colunas-1-auxiliares, n_colunas):
   #      #del col[i]
   #      matriz= list(map(lambda x: x.pop(i), matriz))
-  matriz = transpose(matriz)
-  m1 = matriz_t[0:n_colunas-auxiliares]
+  matriz_t = transpose(matriz)
+  m1 = matriz_t[0:(n_colunas-1-auxiliares)]
   m2 = matriz_t[n_colunas-1]
   matriz = m1.append(m2)
-  matriz = transpose(matriz)
+  matriz = transpose(m1)
 
   sp.simplex(matriz) 
 
