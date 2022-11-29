@@ -1,0 +1,39 @@
+
+###########################################################
+#### EXEMPLOS PARA MOSTRAR NA DEMONSTRAÇÃO DO PROJETO #####
+###########################################################
+
+###################
+###SIMPLEX PADRÃO##
+###################
+Exemplo 1 - sapateiro
+n_linhas = 3
+n_colunas = 6
+tabuleiro = 
+
+
+Exemplo 2 - exercício qualquer
+n_linhas = 3
+n_colunas = 6
+tabuleiro = 
+
+
+Exemplo 3
+n_linhas = 3
+n_colunas = 6
+tabuleiro = 
+
+#########
+###BIGM##
+#########
+Exemplo 1 - 
+n_linhas = 4
+n_colunas = 10
+n_auxiliares = 2
+tabuleiro =
+
+
+MINIMIZAÇÃO
+
+
+GRÁFICO

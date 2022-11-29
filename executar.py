@@ -94,6 +94,8 @@ def exec_grafico():
 def exec_modelo():
     window_modelo = tk.Tk()
 
+    dm.definirmodelo()
+
     window_modelo.mainloop()
 
 browse_btn2 = tk.Button(master, text='Montar modelo', command= lambda:exec_modelo(), font = 'Raleway', bg="#15bebe", fg='white', height=2, width=15)
