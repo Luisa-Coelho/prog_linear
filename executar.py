@@ -1,6 +1,6 @@
 import simplex as sp
 import big_m as bm
-#import grafico as gr
+import gr_novo
 import definir_modelo as dm
 import tkinter as tk
 from PIL import Image, ImageTk
@@ -88,8 +88,14 @@ canvas.grid(columnspan=3)
   
 
 def exec_grafico():
-    pass
+    window_grafico = tk.Tk()
 
+    gr_novo.montar_grafico()
+
+    window_grafico.mainloop()
+
+btn_gr = tk.Button(master, text='Gráfico', command= lambda:exec_grafico(), font = 'Raleway', bg="#15bebe", fg='white', height=2, width=15)
+btn_gr.grid(column=1, row=3)
 
 def exec_modelo():
     window_modelo = tk.Tk()
