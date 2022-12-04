@@ -33,7 +33,10 @@ n_auxiliares = 2
 tabuleiro = 1,-1,-1,-1,0,0,infinito, infinito,0,0,2,1,-1,1,0,0,0,100,0,1,1,2,0,-1,1,0,200,0,2,1,3,0,0,0,1,600
 
 
-MINIMIZAÇÃO
-
-
 GRÁFICO
+
+FO maz = 20x1 + 30 x2
+
+rest 1: 2x1 + x2 <= 200
+rest 2: x1 + 3x2 <= 300
+

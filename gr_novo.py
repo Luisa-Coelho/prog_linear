@@ -137,5 +137,5 @@ def montar_grafico():
     
     
     x, y = np.meshgrid(d,d)
-    matplotlib.pyplot.imshow( ((y<= 200 - 2*x) & (3*y <= 300 - x)).astype(int), extent=(x.min(),x.max(),y.min(),y.max()), origin="lower", cmap="Greys", alpha = 0.3)
+    matplotlib.pyplot.imshow( ((3*y <= 200 - 2*x) & (3*y <= 300 - x)).astype(int), extent=(x.min(),x.max(),y.min(),y.max()), origin="lower", cmap="Greys", alpha = 0.3)
     
